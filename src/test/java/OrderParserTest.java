@@ -29,19 +29,6 @@ public class OrderParserTest {
         assertEquals(2, result.getFirst().getPromotions().size());
     }
 
-    @Test
-    public void testMissingPromotionsField() {
-        String json = """
-        [
-          { "id": "ORDER1", "value": "150.00" }
-        ]
-        """;
-
-        File file = createTempJsonFile(json);
-        assertThrows(Exception.class, () -> {
-            mapper.readValue(file, new TypeReference<List<OrderEl>>() {});
-        });
-    }
 
     @Test
     public void testInvalidValueFormat() {

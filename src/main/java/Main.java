@@ -63,7 +63,8 @@ public class Main {
             if (current_point_limit >= 0.1 * value) {
                 left = 0.9 * value;
                 payed.add(new Pair<>("PUNKTY", 0.1 * value));
-            } else {
+            }
+            else {
                 left = value;
             }
             price3 = left;
@@ -86,10 +87,12 @@ public class Main {
             if (best == price1) {
                 addPayment(payedAmounts, "PUNKTY", price1);
                 data.updatePaymentLimit("PUNKTY", price1);
-            } else if (best == price2 && best_payment != null) {
+            }
+            else if (best == price2 && best_payment != null) {
                 addPayment(payedAmounts, best_payment, price2);
                 data.updatePaymentLimit(best_payment, price2);
-            } else {
+            }
+            else {
                 payed_mixed.put(order, payed);
                 for (Pair<String, Double> el : payed) {
                     addPayment(payedAmounts, el.getFirst(), el.getSecond());
@@ -113,7 +116,8 @@ public class Main {
                         addPayment(payedAmounts, el.getFirst(), -points_left);
                         points_left = 0;
                         break;
-                    } else {
+                    }
+                    else {
                         addPayment(payedAmounts, "PUNKTY", price);
                         addPayment(payedAmounts, el.getFirst(), -price);
                         points_left -= price;
