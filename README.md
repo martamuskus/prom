@@ -1,6 +1,6 @@
 # prom
 
----Usage----
+# Usage
 
 Running the app: java -jar /home/…/app.jar /home/…/orders.json /home/…/paymentmethods.json
 
@@ -8,9 +8,7 @@ Running tests: mvn test
 
 Build: make 
 
----File structure---
-
-promotions
+# File structure
 
 |-src
 
@@ -44,15 +42,15 @@ promotions
 
 -pom.xml
 
----Notes---
+# Notes
 
 Folder contains both normal .jar [app-1.0.jar] and fat jar with dependencies [app-1.0-jar-with-dependencies.jar]
 
----Task Overview---
+# Task Overview
 
 The goal is to develop an algorithm that, given a list of orders, available promotions, and the customer’s wallet (containing payment methods, limits, and discounts), selects the optimal payment method for each order to maximize the total discount while meeting all constraints. Payments should be selected so that all orders are fully paid. The algorithm should minimize card payments, preferring to use points if it does not reduce the applicable discount.
 
----Rules---
+# Rules
 
 Each order is assigned a selected subset of applicable promotions related to the payment method.
 
